@@ -8,6 +8,7 @@ public class Barista {
         beanCount = 2;
         cashbox = 0;
     }
+
     public Barista(int coffeePrice, int beanCount) {
         this.coffeePrice = coffeePrice;
         this.beanCount = beanCount;
@@ -36,7 +37,7 @@ public class Barista {
     public String takeOrder(String menuName, int payment) {
         System.out.println("[바리스타]: 주문을 확인했습니다.");
 
-        if(checkCoffee() == false) {
+        if (checkCoffee() == false) {
             System.out.println("[바리스타]: 원두가 없어서 주문이 불가능 합니다.");
             // TODO : 받은 돈 돌려주기 개발 필요
             return "0";
@@ -48,16 +49,5 @@ public class Barista {
         String madeCoffee = makeCoffee(menuName);
         return madeCoffee;
 
-    }
-    public void plusTakeOrder(String menuName, int payment) {
-        System.out.println("[바리스타]: 주문을 확인했습니다.");
-
-        if (beanCount == 0) {
-            System.out.println("[바리스타]: 죄송합니다. 원두가 없어서 주문이 불가능 합니다.");
-
-        }
-    }
-    public int getReturnPrice() {
-        return coffeePrice;
     }
 }
