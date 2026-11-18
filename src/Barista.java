@@ -39,7 +39,7 @@ public class Barista {
         if(checkCoffee() == false) {
             System.out.println("[바리스타]: 원두가 없어서 주문이 불가능 합니다.");
             // TODO : 받은 돈 돌려주기 개발 필요
-            return "Error";
+            return "0";
         }
 
         cashbox = cashbox + payment;
@@ -49,6 +49,15 @@ public class Barista {
         return madeCoffee;
 
     }
+    public void plusTakeOrder(String menuName, int payment) {
+        System.out.println("[바리스타]: 주문을 확인했습니다.");
 
+        if (beanCount == 0) {
+            System.out.println("[바리스타]: 죄송합니다. 원두가 없어서 주문이 불가능 합니다.");
 
+        }
+    }
+    public int getReturnPrice() {
+        return coffeePrice;
+    }
 }

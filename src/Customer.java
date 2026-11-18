@@ -48,7 +48,7 @@ public class Customer {
         System.out.println(name + ": " + price + " 원을 지불했습니다.");
         String coffee = barista.takeOrder(menuName, price);
         takeCoffee(coffee);
-        }
+    }
 
 
     public void takeCoffee(String coffee) {
@@ -56,4 +56,29 @@ public class Customer {
 
         System.out.println(name + ": " + coffee + "를 받았습니다.");
     }
+
+    public void plusOrder(Barista barista, String menuName) {
+
+        System.out.println(name + ": " + menuName + " 한 잔 더 주세요");
+        int price = barista.getCoffeePrice();
+        System.out.println("[바리스타]: " + menuName + "는(은) " + price + "원 입니다. ");
+
+        int paymentCheck = pay(price);
+        if (paymentCheck == -9)
+            return;
+
+        System.out.println(name + ": " + price + " 원을 지불했습니다.");
+        String coffee = barista.takeOrder(menuName, price);
+
+
+
+    }
+
+    public void returnPrice(Barista barista, String menuName, Barista beanCount) {
+        if (beanCount.getCoffeePrice() == 0) {
+            money = money + barista.getCoffeePrice();
+            System.out.println(name + "의 잔고는: " + money + "원 입니다.");
+        }
+    }
 }
+
